@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>This web app is an example of a complete data lifecycle.</p>
+<h2>Get Started</h2>
+<p>Use this link to add a person object: <a href="/add">Add Person</a></p>
+<p>This link show a list of you person objects: <a href="/people">See People</a></p>
+
+<h2>Model</h2>
+<p>@Entity annotation within the Person.java files, tells your application that a table should be created in your database;
+database fields are named after the variable in the class. Depending on the database you are using, the data types may have slightly different
+names, but they will be the best types for the kind of data you are working with, so you don't have to think about how the data is stored
+and retrieved/ Remember the getters and setters. They are used to tell database which go values go where.</p>
+<p>The annotation for validation are used to determine whether the information input by the user is what is expected by the application.
+If so, the data can be stored. If not, the view will indicate to the user where the problem are so they can be corrected.</p>
+<h2>CrudRepository</h2>
+<p>This acts as a pipeline to your database, automatically storing, modifying and retrieving data. Through the methods that CrudRepository makes available
+to yoy=u, you can instantly save, find one or all, and delete records by using methods. CrudRepository methods.</p>
+<h2>The Controller</h2>
+<p>This is where the action happens. Routes are mapped out for each action - Creating, Reading, Updating, and Deleting data (CRUD).</p>
+<h2>@Autowired</h2>
+<p>When you create an instance of an object, you use the format ObjectClass objectName = new ObjectClass(); This creates an instance
+of the object, and you can use it within the method where it is called. For CrudRepository, that would mean that you had to instantiate
+the object within each ,ethod, but would be a pain. <br>
+@Autowired tells the complier to instantiate the repository object when the application runs, so you don't have to type out that line
+over and over again.</p>
+
+<a href="/add">Add Person</a>
+<a href="/people">See People</a>
+</body>
+</html>

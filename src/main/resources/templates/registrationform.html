@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Registration</title>
+</head>
+<body>
+<h2>Create a new person object</h2>
+
+<form action="#" th:action="@{/process}" th:object="${person}" method="post">
+    <input type="hidden" th:field="*{id}">
+
+    <input type="text" placeholder="First Name:" th:field="*{firstName}">
+    <span th:if="${#fields.hasErrors('firstName')}"
+          th:errors="*{firstName}"></span>
+
+    <input type="text" placeholder="Last Name:" th:field="*{lastName}">
+    <span th:if="${#fields.hasErrors('lastName')}"
+          th:errors="*{lastName}"></span>
+
+    <label>Age: </label><input type="number" th:field="*{age}">
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

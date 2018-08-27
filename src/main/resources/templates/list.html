@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of People</title>
+</head>
+<body>
+
+<h1>List of People</h1>
+<p>Below is a list of people objects you created.</p>
+<p>You can select the option to either update, delete, or retrieve a specified person.</p>
+
+ <p>Select this link to add a person: <a href="/add">Add Person</a></p>
+
+    <div th:each="person :${people}">
+        <p>First Name: [[${person.firstName}]]</p>
+        <p>Last Name: [[${person.lastName}]]</p>
+        <p>Age: [[${person.age}]]</p>
+        <a th:href="@{/update/{id}(id=${person.id})}">Update</a>
+        <a th:href="@{/delete/{id}(id=${person.id})}">Delete</a>
+        <a th:href="@{/details/{id}(id=${person.id})}">Details</a>
+    </div>
+
+
+</body>
+</html>

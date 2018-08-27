@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Details</title>
+</head>
+<body>
+    <h1 thinline="text">[[${person.firstName}]] [[${person.lastName}]] Details</h1>
+
+    <p th:inline="text">First Name: [[${person.firstName}]]</p>
+    <p th:inline="text">Last Name: [[${person.lastName}]]</p>
+    <p th:inline="text">Age: [[${person.Age}]]</p>
+
+    <h4><a th:href="@{/delete/{id}(id=${person.id})}">Delete This Person</a></h4>
+    <h4><a th:href="@{/update/{id}(id=${person.id})}">Update This Person's Details</a></h4>
+    <h4><a href="/people">See All People</a></h4>
+
+</body>
+</html>
